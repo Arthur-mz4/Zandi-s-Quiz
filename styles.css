@@ -1,0 +1,170 @@
+/* Reset and general styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0;
+    min-height: 100vh; /* Minimum height to ensure vertical scrolling */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+html, body {
+    overflow-x: hidden; /* Hide horizontal overflow */
+    width: 100%; /* Ensure the body does not exceed the viewport width */
+    background-color: rgba(224, 224, 224, 0.8);
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    height: 90px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+    background-color: rgb(31, 175, 132); /* Fallback color */
+    padding: 0 20px; /* Padding to space out header content */
+}
+
+.header-left {
+    flex: 1;
+    color: white;
+    text-align: left;
+}
+
+.header-right {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.header-btn {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+    border: 2px solid lime;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0; /* Remove default margin */
+    transition: background-color 0.3s;
+}
+
+.header-btn:hover {
+    background-color: rgba(255, 255, 255, 1); /* Full white on hover */
+    border: 2px solid lime;
+}
+
+/* General styles for topics */
+.topics {
+    width: 100%;
+    max-width: 800px; /* Adjust maximum width as needed */
+    display: flex;
+    flex-wrap: wrap; /* Allow topics to wrap to the next line */
+    justify-content: space-around; /* Center items horizontally */
+    padding: 20px;
+}
+
+.topic {
+    text-align: center;
+    margin-bottom: 20px; /* Space between topics */
+    width: calc(50% - 20px); /* Half of the container width minus margin */
+    max-width: 250px; /* Maximum width of each topic */
+}
+
+.quiz-image {
+    width: 100%; /* Make the image fill its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin-bottom: 10px; /* Space between image and button */
+}
+
+.topic-btn {
+    display: block;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: rgb(31, 175, 132); /* Button background color */
+    color: white;
+    border: 2px solid lime;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.topic-btn:hover {
+    background-color: rgb(26, 145, 108); /* Darker shade for hover effect */
+}
+
+/* Slideshow CSS (if applicable) */
+@keyframes slide {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    30% { opacity: 1; }
+    40% { opacity: 0; }
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    animation: slide 15s infinite;
+}
+
+/* Welcome text styling */
+main p {
+    font-size: 15px; /* Increase font size for better visibility */
+    font-weight: bold; /* Make the text bold */
+    color: white; /* White text color for contrast */
+    background-color: rgb(31, 175, 132); /* Semi-transparent dark green background */
+    border: 2px solid lime; /* Lime border for contrast */
+    border-radius: 10px; /* Rounded corners */
+    width: 400px;
+    padding-right: 700px;
+    padding: 20px; /* Add padding inside the background */
+    margin: 20px 0; /* Space around the text */
+    text-align: center; /* Center the text */
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for a 3D effect */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle text shadow for better readability */
+}
+
+/* Popup styling */
+.popup {
+    position: fixed;
+    top: 20px; /* Adjust the vertical position as needed */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: 2px solid lime; /* Lime border */
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    z-index: 1000; /* Ensure it appears above other content */
+    display: none; /* Hide by default */
+}
+
+.popup.visible {
+    display: block; /* Show the popup */
+}
+
+.popup p {
+    margin: 0;
+    font-size: 16px; /* Adjust font size as needed */
+}
